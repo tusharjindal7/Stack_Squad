@@ -45,3 +45,8 @@ Tester -
 There are still some errors in the program.
   1. The hangman pics are being shown in the reverse order.
   2. The last hangman pic is not being shown if all guesses are wrong.
+
+
+Developer -
+
+The errors mentioned by the tester have been fixed and the code has been uploaded.

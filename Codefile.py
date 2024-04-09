@@ -93,7 +93,7 @@ def display_hangman(attempts):
       |___________| 
         '''
     ]
-    print(hangman_pics[attempts])
+    print(hangman_pics[max(attempts, -1)])
 
 def hangman():
     while True:
@@ -106,7 +106,7 @@ def hangman():
 
         while True:
             print("\nAttempts left:", attempts)
-            display_hangman(attempts)
+            display_hangman(6-attempts)
             print(display_word(word, guessed_letters))
 
             guess = input("Guess a letter: ").lower()
@@ -121,6 +121,7 @@ def hangman():
                 print("Incorrect!")
                 attempts -= 1
                 if attempts == 0:
+                    print(display_hangman(6))
                     print("You're out of attempts! The word was '{}'.".format(word))
                     break
             else:
