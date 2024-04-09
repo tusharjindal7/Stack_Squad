@@ -21,3 +21,8 @@ Step 5- Revealing Incorrect Guesses: If a guesser guesses a letter that is not i
 Step 6- End Conditions: The game ends when either: > The guessers correctly guess all the letters in the word, in which case they win. > The hangman is completely printed, indicating that the guessers have run out of guesses, in which case they lose.
 
 Step 7- Outcome Display: Once the game ends, the program reveals the entire word to the guessers. If they successfully guessed all the letters, the program congratulates them on their win. If the hangman is complete, the program reveals the word and commiserates with the guessers on their loss. Step 8- Play Again: Players can choose to play again and the program selects a new word.
+
+
+Developer -
+
+The program has been developed and pushed.
