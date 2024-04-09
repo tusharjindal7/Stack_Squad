@@ -26,3 +26,10 @@ Step 7- Outcome Display: Once the game ends, the program reveals the entire word
 Developer -
 
 The program has been developed and pushed.
+
+
+Tester-
+
+There are some errors in the program.
+  1. Hangman pics are not being displayed if the guess is wrong.
+  2. There is no option to play again.
