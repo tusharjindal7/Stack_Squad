@@ -50,3 +50,8 @@ There are still some errors in the program.
 Developer -
 
 The errors mentioned by the tester have been fixed and the code has been uploaded.
+
+
+Tester -
+
+The code is now working properly and is ready for final release.
