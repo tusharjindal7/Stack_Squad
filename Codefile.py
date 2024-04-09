@@ -106,7 +106,7 @@ def hangman():
 
         while True:
             print("\nAttempts left:", attempts)
-            display_hangman(6-attempts)
+            display_hangman(attempts)
             print(display_word(word, guessed_letters))
 
             guess = input("Guess a letter: ").lower()
