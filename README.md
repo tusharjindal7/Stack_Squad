@@ -33,3 +33,8 @@ Tester-
 There are some errors in the program.
   1. Hangman pics are not being displayed if the guess is wrong.
   2. There is no option to play again.
+
+
+Developer - 
+
+The errors mentioned by the tester have been fixed and the code has been uploaded.

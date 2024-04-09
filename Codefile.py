@@ -13,37 +13,125 @@ def display_word(word, guessed_letters):
             displayed_word += '_'
     return displayed_word
 
+def display_hangman(attempts):
+    hangman_pics = [
+        '''
+         _______
+        |       |
+        |
+        |
+        |
+        |
+      __|__
+      |    |______
+      |___________| 
+        ''',
+        '''
+         _______
+        |       |
+        |       O
+        |
+        |
+        |
+      __|__
+      |    |______
+      |___________| 
+        ''',
+        '''
+         _______
+        |       |
+        |       O
+        |       |
+        |
+        |
+      __|__
+      |    |______
+      |___________| 
+        ''',
+        '''
+         _______
+        |       |
+        |       O
+        |      /|
+        |
+        |
+      __|__
+      |    |______
+      |___________| 
+        ''',
+        '''
+         _______
+        |       |
+        |       O
+        |      /|\\
+        |
+        |
+      __|__
+      |    |______
+      |___________| 
+        ''',
+        '''
+         _______
+        |       |
+        |       O
+        |      /|\\
+        |      /
+        |
+      __|__
+      |    |______
+      |___________| 
+        ''',
+        '''
+         _______
+        |       |
+        |       O
+        |      /|\\
+        |      / \\
+        |
+      __|__
+      |    |______
+      |___________| 
+        '''
+    ]
+    print(hangman_pics[attempts])
+
 def hangman():
-    word = choose_word()
-    guessed_letters = []
-    attempts = 6
-
-    print("Welcome to Hangman!")
-    print("The word has {} letters.".format(len(word)))
-
     while True:
-        print("\nAttempts left:", attempts)
-        print(display_word(word, guessed_letters))
+        word = choose_word()
+        guessed_letters = []
+        attempts = 6
 
-        guess = input("Guess a letter: ").lower()
+        print("Welcome to Hangman!")
+        print("The word has {} letters.".format(len(word)))
 
-        if guess in guessed_letters:
-            print("You already guessed that letter.")
-            continue
+        while True:
+            print("\nAttempts left:", attempts)
+            display_hangman(6-attempts)
+            print(display_word(word, guessed_letters))
 
-        guessed_letters.append(guess)
+            guess = input("Guess a letter: ").lower()
 
-        if guess not in word:
-            print("Incorrect!")
-            attempts -= 1
-            if attempts == 0:
-                print("You're out of attempts! The word was '{}'.".format(word))
+            if guess in guessed_letters:
+                print("You already guessed that letter.")
+                continue
+
+            guessed_letters.append(guess)
+
+            if guess not in word:
+                print("Incorrect!")
+                attempts -= 1
+                if attempts == 0:
+                    print("You're out of attempts! The word was '{}'.".format(word))
+                    break
+            else:
+                print("Correct!")
+
+            if all(letter in guessed_letters for letter in word):
+                print("Congratulations! You guessed the word '{}'!".format(word))
                 break
-        else:
-            print("Correct!")
-
-        if all(letter in guessed_letters for letter in word):
-            print("Congratulations! You guessed the word '{}'!".format(word))
+        
+        play_again = input("Do you want to play again? (yes/no): ").lower()
+        if play_again != 'yes':
             break
 
 if __name__ == "__main__":
